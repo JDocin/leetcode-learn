@@ -35,6 +35,22 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/JiQiRenDeYunDongFanWeiLcof .java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/JiQiRenDeYunDongFanWeiLcof .java" />
+              <option name="questionId" value="100281" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/JuZhenZhongDeLuJingLcof .java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/JuZhenZhongDeLuJingLcof .java" />
+              <option name="questionId" value="100279" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/QingWaTiaoTaiJieWenTiLcof .java">
           <value>
             <LeetcodeEditor>
@@ -48,6 +64,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/ShuZuZhongZhongFuDeShuZiLcof .java" />
               <option name="questionId" value="100275" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/TiHuanKongGeLcof .java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/TiHuanKongGeLcof .java" />
+              <option name="questionId" value="100280" />
             </LeetcodeEditor>
           </value>
         </entry>
