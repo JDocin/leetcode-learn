@@ -1,0 +1,78 @@
+// 广度优先
+class Solution0 {
+    public int movingCount(int m, int n, int k) {
+        boolean[][] check = new boolean[m][n];
+        int res = 1;
+        check[0][0] = true;
+        for (int i = 0; i < m && (i/10+i%10)<=k; i++) {
+            for (int j = 0; j < n && (j/10+j%10)<=k; j++) {
+                if(check[i][j]) {
+                    if(isWalk(check,i-1,j,k)) res++;
+                    if(isWalk(check,i+1,j,k)) res++;
+                    if(isWalk(check,i,j-1,k)) res++;
+                    if(isWalk(check,i,j+1,k)) res++;
+                }
+            }
+        }
+        return res;
+    }
+
+    public boolean isWalk(boolean[][] check, int x, int y, int k){
+        int count =  x/10 + x%10 + y/10 + y%10;
+        if (x<0||x>=check.length||y<0||y>check[0].length||check[x][y]||count>k) return false;
+        check[x][y] = true;
+        return true;
+    }
+}
+
+// 广度
+class Solution {
+    public int movingCount(int m, int n, int k) {
+        if (k==0) return 1;
+        boolean[][] check = new boolean[m][n];
+        check[0][0] = true;
+        int res=1;
+        for (int i = 0; i < m && (i/10+i%10)<=k; i++) {
+            for (int j = 0; j < n && (j/10+j%10)<=k; j++) {
+                int count = i/10 + i%10 + j/10 + j%10;
+                if(!check[i][j] && count<=k) {
+                    if(walk(check,i,j)){
+                        //f[count] += 1;
+                        res++;
+                        check[i][j] = true;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+
+
+     public boolean walk(boolean [][]check, int i, int j){
+        if(i-1>=0&&check[i-1][j]) return true;
+        if(i+1<check.length&&check[i+1][j]) return true;
+        if(j-1>=0&&check[i][j-1]) return true;
+        if(j+1<check[0].length&&check[i][j+1]) return true;
+        return false;
+     }
+}
+
+// 深度
+class Solution2 {
+    public int movingCount(int m, int n, int k) {
+        boolean[][] visited = new boolean[m][n];
+        return dfs(0, 0, m, n, k, visited);
+    }
+
+    private int dfs(int i, int j, int m, int n, int k, boolean visited[][]) {
+        if (i < 0 || i >= m || j < 0 || j >= n || (i/10 + i%10 + j/10 + j%10) > k || visited[i][j]) {
+            return 0;
+        }
+        visited[i][j] = true;
+        return dfs(i + 1, j, m, n, k, visited) + dfs(i - 1, j, m, n, k, visited) +
+                dfs(i, j + 1, m, n, k, visited) + dfs(i, j - 1, m, n, k, visited) + 1;
+    }
+}
+
+//runtime:1 ms
+//memory:35.1 MB
