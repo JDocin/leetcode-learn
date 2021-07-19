@@ -102,33 +102,6 @@ class Solution {
         }
      }
 
-     public boolean isOk(boolean[][] check,int i, int j){
-        if(i>0&&i<check.length-1&&j>0&&j<check[0].length-1) {
-            return check[i-1][j]||check[i+1][j]||check[i][j-1]||check[i][j+1];
-        }
-        else if (i==0&&j==0) return true;
-        else if (i==0&&j==check[0].length-1){
-            return check[i+1][j]||check[i][j-1];
-        }
-        else if (i==check.length-1&&j==0){
-            return check[i-1][j]||check[i][j+1];
-        }
-        else if (i==check.length-1&&j==check[0].length-1){
-            return check[i-1][j]||check[i][j-1];
-        }
-        else if (i==0){
-            return check[i+1][j]||check[i][j-1]||check[i][j+1];
-        }
-        else if (i==check.length-1){
-            return check[i-1][j]||check[i][j-1]||check[i][j+1];
-        }
-        else if (j==0){
-            return check[i-1][j]||check[i+1][j]||check[i][j+1];
-        }
-        else {
-            return check[i-1][j]||check[i+1][j]||check[i][j-1];
-        }
-     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
