@@ -34,10 +34,10 @@ class Solution {
     public int[] exchange(int[] nums) {
         if (nums.length<=1) return nums;
         int i=0,j=1;
-        //i指向当前奇偶分界线，偶数第一个
-        while (i<nums.length&&nums[i]%2 == 1) i++;
-        j = i+1;
         while (j<nums.length){
+            //i指向当前奇偶分界线，偶数第一个
+            while (i<nums.length&&nums[i]%2 == 1) i++;
+            j = i+1;
             //j向后找到第一个奇数，ranhoujiaohuan
             while (j<nums.length && nums[j]%2 == 0) j++;
             if(j<nums.length) {

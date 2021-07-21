@@ -58,7 +58,7 @@ class ErWeiShuZuZhongDeChaZhaoLcof{
                 for (j = 0; j <= m; j++) {
                     if (target == matrix[i][j]) return true;
                     if (j<m && target<matrix[i][j+1]) {
-                        m=j;
+                        m=j; // 当前i，j再往右、下走，都比这个大，所以j往右可以全砍了
                         break;
                     }
                 }
