@@ -32,32 +32,38 @@ import java.util.*;
 // Java：包含min函数的栈
 public class BaoHanMinhanShuDeZhanLcof{
     public static void main(String[] args) {
-        Solution solution = new BaoHanMinhanShuDeZhanLcof().new Solution();
+        MinStack minStack = new BaoHanMinhanShuDeZhanLcof().new MinStack();
         // TO TEST
     }
     
     //leetcode submit region begin(Prohibit modification and deletion)
 class MinStack {
-
-    /** initialize your data structure here. */
+    Stack<Integer> s = null;
+    Stack<Integer> smin = null;
+        /** initialize your data structure here. */
     public MinStack() {
-
+        s = new Stack<>();
+        smin = new Stack<>();
     }
     
     public void push(int x) {
-
+        s.push(x);
+        if(smin.isEmpty()) smin.push(x);
+        else if(smin.peek()>=x) smin.push(x);
+        else smin.push(smin.peek());
     }
     
     public void pop() {
-
+        s.pop();
+        smin.pop();
     }
     
     public int top() {
-
+        return s.peek();
     }
     
     public int min() {
-
+        return smin.peek();
     }
 }
 
