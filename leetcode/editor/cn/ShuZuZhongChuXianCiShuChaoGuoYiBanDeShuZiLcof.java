@@ -23,7 +23,6 @@
 //
 // 
 // Related Topics 数组 哈希表 分治 计数 排序 
-// 👍 176 👎 0
 
 package leetcode.editor.cn;
 import java.util.*;
@@ -32,12 +31,27 @@ public class ShuZuZhongChuXianCiShuChaoGuoYiBanDeShuZiLcof{
     public static void main(String[] args) {
         Solution solution = new ShuZuZhongChuXianCiShuChaoGuoYiBanDeShuZiLcof().new Solution();
         // TO TEST
+        System.out.println(solution.majorityElement(new int[]{1, 2, 3, 2, 2, 2, 5, 4, 2}));
     }
     
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int majorityElement(int[] nums) {
-
+        if (nums.length==0) return -1;
+        int tmp = nums[0];
+        int count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if(nums[i] == tmp) count++;
+            else {
+                if(count==1) {
+                    tmp = nums[i];
+                }
+                else {
+                    count--;
+                }
+            }
+        }
+        return tmp;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
