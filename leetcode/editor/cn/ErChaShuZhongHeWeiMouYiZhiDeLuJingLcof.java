@@ -76,12 +76,21 @@ class Solution {
     List<List<Integer>> res = new ArrayList<>();
     List<Integer> l = new ArrayList<>();
     public List<List<Integer>> pathSum(TreeNode root, int target) {
-
+        backtrace(root, target, 0);
+        return res;
     }
 
     public void backtrace(TreeNode node, int target, int sum) {
         if (node==null) return;
-        if (sum+node.val == target)
+        l.add(node.val);
+        if (sum + node.val == target && node.left == null && node.right == null) {
+            res.add(new ArrayList<>(l));
+            l.remove(l.size()-1);
+            return;
+        }
+        backtrace(node.left, target, sum + node.val);
+        backtrace(node.right, target, sum + node.val);
+        l.remove(l.size()-1);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
